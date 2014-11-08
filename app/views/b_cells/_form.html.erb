@@ -1,0 +1,29 @@
+<%= form_for(@b_cell) do |f| %>
+  <% if @b_cell.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@b_cell.errors.count, "error") %> prohibited this b_cell from being saved:</h2>
+
+      <ul>
+      <% @b_cell.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :Cells %><br>
+    <%= f.number_field :Cells %>
+  </div>
+  <div class="field">
+    <%= f.label :CD21 %><br>
+    <%= f.number_field :CD21 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

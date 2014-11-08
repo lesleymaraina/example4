@@ -1,0 +1,35 @@
+<h1>Listing b_cells</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Cells</th>
+      <th>Cd21</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @b_cells.each do |b_cell| %>
+      <tr>
+        <td><%= b_cell.name %></td>
+        <td><%= b_cell.Cells %></td>
+        <td><%= b_cell.CD21 %></td>
+        <td><%= link_to 'Show', b_cell %></td>
+        <td><%= link_to 'Edit', edit_b_cell_path(b_cell) %></td>
+        <td><%= link_to 'Destroy', b_cell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h3>Import B_Cells</h3>
+<%= form_tag import_b_cells_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload B_Cells" %>
+<% end %>
+
+<%= link_to 'New B cell', new_b_cell_path %>

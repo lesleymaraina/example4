@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Names:</strong>
+  <%= @cell.names %>
+</p>
+
+<p>
+  <strong>Cell:</strong>
+  <%= @cell.Cell %>
+</p>
+
+<p>
+  <strong>Cd22:</strong>
+  <%= @cell.CD22 %>
+</p>
+
+<%= link_to 'Edit', edit_cell_path(@cell) %> |
+<%= link_to 'Back', cells_path %>
