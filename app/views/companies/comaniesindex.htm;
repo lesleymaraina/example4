@@ -1,0 +1,35 @@
+<h1>Listing companies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Names</th>
+      <th>Cell</th>
+      <th>Cd22</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.names %></td>
+        <td><%= company.Cell %></td>
+        <td><%= company.CD22 %></td>
+        <td><%= link_to 'Show', company %></td>
+        <td><%= link_to 'Edit', edit_company_path(company) %></td>
+        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h3>Import Cells</h3>
+<%= form_tag import_companies_path, multipart: true do %>
+<%= file_field_tag :file %>
+<%= submit_tag "Upload Companies" %>
+<% end %>
+
+<%= link_to 'New Company', new_company_path %>

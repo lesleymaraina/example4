@@ -14,13 +14,26 @@ google.setOnLoadCallback(drawChart);
     data.addColumn('string', 'To');
     data.addColumn('number', 'Weight');
     data.addRows([
-      
-        ['Cell Growth', 'Cell Cycle', 12.5], //17
-        ['Cell Growth', 'DNA mod./Txn Factor Binding', 3], //3
-        ['Cell Growth', 'Cell Size', 3], //3
-        ['Cell Growth', 'Proliferation', 8], //8
-    
-                
+        ['MYC GENES', 'Cell Growth', 31],
+        ['MYC GENES', 'Cell Death', 11],
+        ['Cell Growth', 'Cell Cycle', 17],
+        ['Cell Growth', 'DNA mod./Txn Factor Binding', 3],
+        ['Cell Growth', 'Cell Size', 3],
+        ['Cell Growth', 'Proliferation', 8],
+        ['Cell Death', 'apoptosis(general)', 4],
+        ['Cell Death', 'apoptosis(negative)', 6],
+        ['Cell Death', 'apoptosis(positive)', 1],
+                 ['apoptosis(positive)', 'Cdk4',  .6],
+                  ['apoptosis(general)', 'Eif5a', .5],
+                 ['apoptosis(negative)', 'Hells', .6],
+                 ['apoptosis(negative)', 'Hspd1', .7],
+                   ['apoptosis(general)', 'ILF3', .7],
+                   ['apoptosis(negative)', 'Mnt', .7],
+                  ['apoptosis(negative)', 'Npm1', .6],
+                   ['apoptosis(negative)', 'Phb', .6],
+                  ['apoptosis(general)', 'PHF17', .7],
+                    ['apoptosis(general)', 'SET', .7],
+                  ['apoptosis(negative)', 'Sod2', .7],
                   ['Cell Cycle', 'ANAPC1', 0.47],
                    ['Cell Cycle', 'APEX1', 0.91],
                    ['Cell Cycle', 'Ccnb1', 0.18],
@@ -40,7 +53,9 @@ google.setOnLoadCallback(drawChart);
                    ['Cell Size', 'Npm1', 0.67],
                   ['Cell Size', 'Pa2g4', 0.70],
                   ['Cell Size', 'Psmd7', 0.48],
-  
+  ['DNA mod./Txn Factor Binding', 'Eif4e', 0.59],
+   ['DNA mod./Txn Factor Binding', 'ILF3', 0.74],
+   ['DNA mod./Txn Factor Binding', 'Ppan', 0.5],
                  ['Proliferation', 'Bop1', 0.79],
                 ['Proliferation', 'Chek1', 0.48],
                 ['Proliferation', 'Hells', 0.61],
@@ -49,10 +64,7 @@ google.setOnLoadCallback(drawChart);
                   ['Proliferation', 'Phb', 0.65],
                 ['Proliferation', 'PHF17', 0.72],
                ['Proliferation', 'RUVBL1', 0.58],
-                ['Proliferation', 'YWHAG', 0.49],
-                ['DNA mod./Txn Factor Binding', 'Eif4e', 0.59],
-   ['DNA mod./Txn Factor Binding', 'ILF3', 0.74],
-   ['DNA mod./Txn Factor Binding', 'Ppan', 0.5],
+                ['Proliferation', 'YWHAG', 0.49]
       ]);
 
     // Set chart options
@@ -60,7 +72,7 @@ google.setOnLoadCallback(drawChart);
       width: 600,
         sankey: {
         link: { color: { fill: '#d799ae' } },
-        node: { nodePadding: 8, 
+        node: { nodePadding: 1, 
                 color: { fill: '#a61d4c' },
                 label: { color: '#871b47' } },
               }
